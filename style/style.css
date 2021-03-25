@@ -1,0 +1,188 @@
+:root {
+    --cor1: #011627;
+    --cor2: #fdfffc;
+    --cor2b: #fdfffc9c;
+    --cor3: #2ec4b6;
+    --cor4: #e71d36;
+    --cor5: #ff9f1c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor1);
+    font-family: 'Fira Mono', monospace;
+}
+
+.placar {
+    width: calc(120*3px);
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.pontuacao, #reiniciar {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 10px;
+    background-color: var(--cor5);
+    color: var(--cor2);
+    border-radius: 8px;
+    border-bottom: 3px solid var(--cor1);
+    box-shadow: 0px 2px 6px var(--cor2b);
+    font-size: 28px;
+}
+
+.selecionado {
+    animation-name: jogadorDaVez;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: backwards;
+}
+
+#j0 {
+    margin-right: 10px;
+}
+
+#j1 {
+    margin-left: 10px;
+}
+
+#resultado {
+    width: 360px;
+    height: 360px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: var(--cor2);
+}
+
+#texto {
+    font-size: 60px;
+}
+
+.std {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sair-tela {
+    animation-name: sairdaTela;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.entrar-tela {
+    animation-name: sairdaTela;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-direction: reverse;
+}
+
+.campo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border: 4px solid var(--cor3);
+}
+
+.campo:hover {
+    cursor: pointer;
+}
+
+#reiniciar {
+    width: calc(120*3px);
+    margin-top: 40px;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 600;
+    transition-duration: .8s;
+}
+
+#reiniciar:hover {
+    cursor: pointer;
+    background-color: var(--cor4);
+    border-bottom: 3px solid var(--cor5);
+    box-shadow: 0px 5px 10px var(--cor1);
+}
+
+.no-border-top {
+    border-top: none;
+}
+
+.no-border-left {
+    border-left: none;
+}
+
+.no-border-right {
+    border-right: none;
+}
+
+.no-border-bottom {
+    border-bottom: none;
+}
+
+.o::after {
+    content: "\1F383";
+    font-size: 50px;
+    /*porque é a mesma altura do container*/
+}
+
+.x::after {
+    content: "\1F47B";
+    font-size: 50px;
+}
+
+@keyframes jogadorDaVez {
+    100% {
+        background-color: var(--cor4);
+        border-bottom: 3px solid var(--cor5);
+        box-shadow: 0px 5px 10px var(--cor1);
+    }
+}
+
+@keyframes sairdaTela {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: .75;
+    }
+    50% {
+        opacity: .50;
+    }
+    75% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width:375px){
+    .placar,.tabuleiro, #reiniciar, #resultado{
+        width: calc(110*3px);
+    }
+    .placar{
+        padding-top: 20px;
+    }
+    #resultado{
+        font-size: 42px;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Desafio Jogo da Velha</title>
+</head>
+
+<body>
+    <div class="placar">
+        <div id="j0" class="pontuacao interacao">
+            <span>&#x1F383;</span>
+            <span id="pontuacao-j0">0</span>
+        </div>
+        <div id="j1" class="pontuacao interacao">
+            <span>&#x1F47B;</span>
+            <span id="pontuacao-j1">0</span>
+        </div>
+    </div>
+    <div id="resultado">
+        <span id="titulo"></span>
+        <span id="texto"></span>
+    </div>
+    <div id="tab" class="tabuleiro">
+        <div class="std">
+            <div id="0" class="campo no-border-left no-border-top"></div>
+            <div id="1" class="campo no-border-top"></div>
+            <div id="2" class="campo no-border-top no-border-right"></div>
+        </div>
+        <div class="std">
+            <div id="3" class="campo no-border-left"></div>
+            <div id="4" class="campo "></div>
+            <div id="5" class="campo no-border-right"></div>
+        </div>
+        <div class="std">
+            <div id="6" class="campo no-border-left no-border-bottom"></div>
+            <div id="7" class="campo no-border-bottom"></div>
+            <div id="8" class="campo no-border-bottom no-border-right"></div>
+        </div>
+    </div>
+    <div id="reiniciar" class='interacao'>
+        <span>Reiniciar</span>
+    </div>
+
+    <script src="./scripts/game.js"></script>
+    <script src="./scripts/interface.js"></script>
+</body>
+
+</html>
